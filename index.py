@@ -20,4 +20,5 @@ def dust():
 
 @app.route("/tina")
 def tina():
-    return render_template('tina.jinja.html')
+    tina= ['吃麵？','吃飯= =!!!','吃鴨腿飯☆☆☆','老仔，月底要吃土了!!!']
+    return render_template('tina.jinja.html',tina=tina)
