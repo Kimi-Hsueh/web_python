@@ -1,10 +1,16 @@
+{#這是jinja的模板網頁#}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{%block title%} {%endblock%}</title>
+    {#此處為jinja的block語法，此處是留給子繼承網頁輸入自定義的頁籤#}
     <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.css')}}">
+    {#
+    此處使用jinja的語法{{}}
+    flask的指令為url_for('靜態網頁',filename='資料夾/靜態網頁的css檔')
+    #}
     <style>
         .main{
             background-color: rgb(201, 236, 130);
@@ -24,8 +30,11 @@
               <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                   <a class="nav-link active" aria-current="page" href="{{url_for('index')}}">回到首頁</a>
+                  <!--此行也是使用jinja語法進行flask的連結描述， 敘述的內容為flask的url_for('py檔內的index物件')-->
                   <a class="nav-link" href="{{url_for('kneel')}}">跪主機板_kneel</a>
+                  <!--此行也是使用jinja語法進行flask的連結描述， 敘述的內容為flask的url_for('py檔內的kneel物件')-->
                   <a class="nav-link" href="{{url_for('dust')}}">我在東北玩泥巴_dust</a>
+                  <!--此行也是使用jinja語法進行flask的連結描述， 敘述的內容為flask的url_for('py檔內的dust物件')-->
                   <a class="nav-link disabled">今晚睡地板</a>
                 </div>
               </div>
@@ -35,11 +44,13 @@
     </div>
 <div class="container main">
 {%block content%}
-
+{#此處是jinja的block語法，此處是留給子繼承網頁輸入自定義的頁籤#}
 {%endblock%}
 
 </div>
     <script src="{{url_for('static', filename='js/bootstrap.js')}}"></script>
-   
+   {#此處使用jinja的語法{{}}
+    flask的指令為url_for('靜態網頁',filename='資料夾/靜態網頁的js檔')
+   #}
 </body>
 </html>
