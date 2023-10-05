@@ -4,5 +4,10 @@
 
 {%block content%}
 <h1>這是夢夢的夢想起飛網頁</h1>
-<img class="img" src="static/images/851413.jpg" alt="" width="70%" >
+<img class="img" src="static/images/thinker.jpg" alt="" width="40%" >
+<ul>
+    {% for item in tina %}
+    <li>{{ item }}</li>
+    {% endfor %}
+</ul>
 {% endblock %}
