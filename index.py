@@ -1,4 +1,6 @@
-from flask import Flask
+from flask import Flask #import flask的套件
+
+#flask的啟動指令：flask --app py檔名 run --debug
 
 app = Flask(__name__)
 
@@ -8,3 +10,4 @@ def hello_world():
 
 @app.route('/second')
 def second():
+    return "<p>second page</p>"
