@@ -1,11 +1,18 @@
 {% extends "base.jinja.html"%}
-
+{#此處是複制base.jinja.html模板#}
 {%block title%} 首頁 {%endblock%}
-
+{#此處使用jinja的block語法，在兩個成對的語法中間輸入頁籤文字#}
 {%block content%}
+{#此處使用jinja的block語法
+除了加入h1標題外，還可以另外再加入p文字或是其他的內容
+#}
 <h1>這是首頁</h1>
 <ul>
   {% for item in names %}
+  {#此處使用jinja的"for xxx in 變數"語法
+  變數的內容是寫在index.py內
+  並以ul/li的方式呈現
+  #}
   <li>{{ item }}</li>
   {%endfor%}
 </ul>
